@@ -1,9 +1,5 @@
-import { knex as setupKnex, Knex } from 'knex'
-import {env} from '../env/index'
-
-if(! process.env.DATABASE_URL){
-  throw new Error('DATABASE_URL  not found')
-}
+import { Knex, knex as setupKnex } from 'knex'
+import { env } from './env'
 
 export const config: Knex.Config = {
   client: 'sqlite',
@@ -13,7 +9,8 @@ export const config: Knex.Config = {
   useNullAsDefault: true,
   migrations: {
     extension: 'ts',
-    directory: 'db/migrations',
+    directory: './db/migrations',
   },
 }
+
 export const knex = setupKnex(config)
