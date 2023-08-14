@@ -1,3 +1,6 @@
+#Database
+database/*.db
+
 # Logs
 logs
 *.log
@@ -75,7 +78,7 @@ web_modules/
 # dotenv environment variable files
 .env
 .env.development.local
-.env.test.local
+.env.test
 .env.production.local
 .env.local
 
